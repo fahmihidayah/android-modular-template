@@ -1,6 +1,9 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-//    ext.kotlin_version = "1.5.10"
+//val Versions.kotlin by extra("1.5.10")
+    //    Versions.kotlin
+//val Versions.kotlin by extra("1.5.10")
+    //    ext.kotlin_version = "1.5.10"
     repositories {
         google()
         mavenCentral()
@@ -10,7 +13,7 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
 
         // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        // in the individual module build.gradle.kts files
     }
 }
 

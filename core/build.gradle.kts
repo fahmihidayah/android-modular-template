@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("kotlin-android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -33,12 +34,19 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    android {
+        buildFeatures{
+            this.viewBinding = AppConfig.viewBindingEnabled
+            this.dataBinding = AppConfig.dataBindingEnabled
+        }
+    }
 }
 
 dependencies {
     implementation(AppDependencies.appLibraries)
     testImplementation(AppDependencies.testLibraries)
     androidTestImplementation(AppDependencies.androidTestLibraries)
+    kapt(AppDependencies.kaptLibraries)
 //    implementation("org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}")
 //    implementation("androidx.core:core-ktx:1.6.0")
 //    implementation("androidx.appcompat:appcompat:1.3.1")

@@ -57,6 +57,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    android {
+        buildFeatures{
+            this.viewBinding = AppConfig.viewBindingEnabled
+            this.dataBinding = AppConfig.dataBindingEnabled
+        }
+    }
 }
 
 dependencies {
@@ -64,6 +70,7 @@ dependencies {
     implementation(AppDependencies.appLibraries)
     testImplementation(AppDependencies.testLibraries)
     androidTestImplementation(AppDependencies.androidTestLibraries)
+    implementation(project(":core"))
 //    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.5.21")
 //    implementation("androidx.core:core-ktx:1.6.0")
 //    implementation("androidx.appcompat:appcompat:1.3.1")
